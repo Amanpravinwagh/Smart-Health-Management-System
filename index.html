@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Healthcare Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">Smart Healthcare Management System</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Patient Management</h5>
+                        <p class="card-text">Add, update, and view patient records efficiently.</p>
+                        <button class="btn btn-primary" onclick="showPatientForm()">Manage Patients</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Diagnostic Reports</h5>
+                        <p class="card-text">Generate and view diagnostic statistics and reports.</p>
+                        <button class="btn btn-primary" onclick="showReports()">View Reports</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Appointment Scheduler</h5>
+                        <p class="card-text">Book, view, and manage appointments seamlessly.</p>
+                        <button class="btn btn-primary" onclick="showAppointments()">Schedule Appointments</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" class="mt-4">
+            <!-- Dynamic Content Will Be Loaded Here -->
+        </div>
+    </div>
+
+    <script>
+        function showPatientForm() {
+            document.getElementById('content').innerHTML = `
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Patient Management</h5>
+                        <form>
+                            <div class="mb-3">
+                                <label for="patientName" class="form-label">Patient Name</label>
+                                <input type="text" class="form-control" id="patientName" placeholder="Enter name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="patientAge" class="form-label">Age</label>
+                                <input type="number" class="form-control" id="patientAge" placeholder="Enter age">
+                            </div>
+                            <div class="mb-3">
+                                <label for="patientDisease" class="form-label">Disease</label>
+                                <input type="text" class="form-control" id="patientDisease" placeholder="Enter disease">
+                            </div>
+                            <button type="button" class="btn btn-success">Add Patient</button>
+                        </form>
+                    </div>
+                </div>`;
+        }
+
+        function showReports() {
+            document.getElementById('content').innerHTML = `
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Diagnostic Reports</h5>
+                        <p>Generate and view diagnostic statistics and insights.</p>
+                        <button class="btn btn-info">Generate Report</button>
+                    </div>
+                </div>`;
+        }
+
+        function showAppointments() {
+            document.getElementById('content').innerHTML = `
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Appointment Scheduler</h5>
+                        <form>
+                            <div class="mb-3">
+                                <label for="appointmentName" class="form-label">Patient Name</label>
+                                <input type="text" class="form-control" id="appointmentName" placeholder="Enter name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="appointmentTime" class="form-label">Appointment Time</label>
+                                <input type="time" class="form-control" id="appointmentTime">
+                            </div>
+                            <button type="button" class="btn btn-success">Book Appointment</button>
+                        </form>
+                    </div>
+                </div>`;
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
